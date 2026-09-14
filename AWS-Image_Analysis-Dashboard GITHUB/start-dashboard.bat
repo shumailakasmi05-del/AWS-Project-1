@@ -1,0 +1,3 @@
+@echo off
+cd /d "%~dp0"
+powershell -ExecutionPolicy Bypass -Command "$listener = New-Object System.Net.HttpListener; $listener.Prefixes.Add('http://localhost:8000/'); $listener.Start(); Write-Host 'Dashboard running at http://localhost:8000'; while ($listener.IsListening) { $context = $listener.GetContext(); $path = $context.Request.Url.LocalPath; if ($path -eq '/') { $path = '/index.html' }; $file = Join-Path (Get-Location) $path.TrimStart('/'); if (Test-Path $file) { $bytes = [System.IO.File]::ReadAllBytes($file); $context.Response.ContentLength64 = $bytes.Length; $context.Response.OutputStream.Write($bytes,0,$bytes.Length) } else { $context.Response.StatusCode = 404 }; $context.Response.Close() }"

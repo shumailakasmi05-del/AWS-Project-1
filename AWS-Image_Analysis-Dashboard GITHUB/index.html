@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AWS AI Image Analysis</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <div class="badge">
+                AWS SERVERLESS AI
+            </div>
+
+            <h1>
+                Image Analysis Dashboard
+            </h1>
+
+            <p>
+                Analyze images using Amazon Rekognition and Amazon Bedrock.
+            </p>
+
+        </header>
+
+        <section class="search-card">
+
+            <h2>
+                View Analysis
+            </h2>
+
+            <p>
+                Enter the name of an image that has already been analyzed.
+            </p>
+
+            <div class="input-row">
+
+                <input
+                    type="file"
+                    id="imageFile"
+                    accept="image/*"
+                >
+
+                <button onclick="uploadImage()">
+                    Upload & Analyze
+                </button>
+
+            </div>
+
+        </section>
+
+        <section
+            id="loading"
+            class="loading hidden"
+        >
+            Analyzing image...
+        </section>
+
+        <section
+            id="error"
+            class="error hidden"
+        ></section>
+
+        <section
+            id="dashboard"
+            class="hidden"
+        >
+
+            <div class="image-header">
+
+                <h2 id="imageName">
+                    Image
+                </h2>
+
+                <span id="analysisStatus">
+                    Analysis Complete
+                </span>
+
+            </div>
+
+            <div class="summary-card">
+
+                <h2>
+                    🤖 AI Summary
+                </h2>
+
+                <p id="summary"></p>
+
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>
+                        Objects
+                    </h3>
+
+                    <div
+                        class="big-number"
+                        id="objectCount"
+                    >
+                        0
+                    </div>
+
+                    <p>
+                        Detected objects
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+                        Faces
+                    </h3>
+
+                    <div
+                        class="big-number"
+                        id="faceCount"
+                    >
+                        0
+                    </div>
+
+                    <p>
+                        Detected faces
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+                        Text
+                    </h3>
+
+                    <div
+                        class="big-number"
+                        id="textCount"
+                    >
+                        0
+                    </div>
+
+                    <p>
+                        Text items found
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>
+                        Safety
+                    </h3>
+
+                    <div
+                        class="big-number"
+                        id="safetyStatus"
+                    >
+                        —
+                    </div>
+
+                    <p>
+                        Content moderation
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="details-grid">
+
+                <div class="detail-card">
+
+                    <h2>
+                        🎯 Detected Objects
+                    </h2>
+
+                    <div id="objects"></div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <h2>
+                        👤 Face Analysis
+                    </h2>
+
+                    <div id="faces"></div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <h2>
+                        📝 Detected Text
+                    </h2>
+
+                    <div id="text"></div>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <h2>
+                        🛡️ Safety Analysis
+                    </h2>
+
+                    <div id="safety"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+
+            <p>
+                Built with Amazon S3 • AWS Lambda • Amazon Rekognition • Amazon Bedrock • API Gateway
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
