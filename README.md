@@ -217,3 +217,16 @@ Computer Vision • OCR • Generative AI • Content Moderation
 Cost Note
 
 This project uses AWS services that can incur charges depending on usage. Keep testing volumes small and monitor AWS billing when experimenting with the application.
+## Demo
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Uploading an Image
+
+![Upload](screenshots/upload.png)
+
+### AI Analysis Results
+
+![Analysis Results](screenshots/analysis.png)
