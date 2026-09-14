@@ -221,12 +221,12 @@ This project uses AWS services that can incur charges depending on usage. Keep t
 
 ### Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/ANALYZER DASHBOARD.png)
 
 ### Uploading an Image
 
-![Upload](screenshots/upload.png)
+![Upload](screenshots/ANALYZING BARACK.png)
 
 ### AI Analysis Results
 
-![Analysis Results](screenshots/analysis.png)
+![Analysis Results](ANALYZING BARACK CONT-.png)
